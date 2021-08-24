@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  
+  box-sizing: border-box;
+  text-decoration: none;
+  
+}
+header {
+    background-color: rgb(36, 77, 143);
+   padding-bottom: 5px;
+   margin-bottom: 10px;
+}
+
+main {
+      
+    padding-top: 20px
+}
+
+nav a {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 13, 87);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+nav {
+  color: rgb(255, 255, 255);
+  padding-top: 10px;
+  margin-left: 30px 
+};
+
+
+
+a {
+color: rgb(255, 255, 255);
+}
+
+.wrapper {
+    margin-left: 20px;
+    margin-top: 20px; 
+    padding-bottom: 10px; 
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: unset;
+}
+
+.wrapper a {
+  color: rgb(238, 238, 238);
+  background-color: rgb(0, 13, 87);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+
+  a:hover {
+   background-color: rgb(0, 13, 87)
+};
+
+
+
+textarea, input {
+  padding: 20%;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+  border: 2px solid #0044ff;
+  background-color: rgba(240, 255, 255, 0.219);
+}
+
+textarea {
+  min-width: 60%;
+  min-height: 200px;
+  display: flex;
+}
+
+form > div {
+  margin-bottom: 2%;
+}
+
+form label {
+  display: block;
+  color: rgb(255, 255, 255);
+  padding: 5px 0;
+}
+
+
+.login-form {
+    margin-right: 200px;
+    border: 6px solid #001e72;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px  rgba(0, 0, 0, 0.404);
+    padding: 10px ;
+    margin-bottom: 50px;
+    background-color: rgb(36, 77, 143);
+}
+.signup-form {
+    padding-bottom: 30px;
+    border: 6px solid #001f75;
+    box-shadow: 10px 10px 10px  rgba(0, 0, 0, 0.404);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: -10px;
+    background-color: rgb(36, 77, 143);
+}
+
+
+.loginsignup {
+    padding-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:left;
+    padding-bottom: 30px;
+    
+};
+
+.username-signup {
+    border-radius: 40px;
+}
+
+button { margin-top: 10px;
+    padding-bottom: 30px;
+    border: 2px solid #001f75;
+    border-radius: 5px;
+    padding: 5px;
+
+}
+
