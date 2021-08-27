@@ -1,6 +1,6 @@
 const router = require('express').Router();
 // const withAuth = require('../../utils/auth');
-const { User } = require("../../models");
+const { User, Post } = require("../../models");
 
 
 // get all users
@@ -24,23 +24,18 @@ router.get('/:id', (req, res) => {
     include: [
   {
     model: Post,
-    attributes: ['id', 'title', 'post_url', 'created_at']
+    attributes: ['id', 'title', 'post_content', 'created_at']
   },
 
-    {
-      model: Comment,
-      attributes: ['id', 'comment_text', 'created_at'],
-      include: {
-        model: Post,
-        attributes: ['title']
-      }
-    },
-  {
-    model: Post,
-    attributes: ['title'],
-    through: Vote,
-    as: 'voted_posts'
-  }
+    // {
+    //   model: Comment,
+    //   attributes: ['id', 'comment_text', 'created_at'],
+    //   include: {
+    //     model: Post,
+    //     attributes: ['title']
+    //   }
+    // },
+
 ]
   })
     .then(dbUserData => {
@@ -72,11 +67,14 @@ router.post('/', (req, res) => {
     res.json(dbUserData);
     });
   })
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 router.post('/login', (req, res) => {
 
- // expects {email: 'lernantino@gmail.com', password: 'password1234'}
   User.findOne({
     where: {
       username: req.body.username
@@ -86,8 +84,7 @@ router.post('/login', (req, res) => {
       res.status(400).json({ message: 'No user with that username!' });
       return;
     }
-    // add comment syntax in front of this line in the .then()
-    // res.json({ user: dbUserData }
+  
         // Verify user
     const validPassword = dbUserData.checkPassword(req.body.password);
 
@@ -109,8 +106,7 @@ router.post('/login', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
-
+ 
   // pass in req.body instead to only update what's passed through
   User.update(req.body, {
     individualHooks: true,
