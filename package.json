@@ -1,7 +1,10 @@
 {
-  "name": "just-tech-news",
+  "name": "get-clickn-news",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "14.17.3"},
+
   "main": "server.js",
   "scripts": {
     "test": "jest",
@@ -29,6 +32,6 @@
     "sequelize": "^6.6.5"
   },
   "devDependencies": {
-    "jest": "^27.0.6"
+    "jest": "^27.1.0"
   }
 }
