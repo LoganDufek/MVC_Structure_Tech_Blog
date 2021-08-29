@@ -3,7 +3,7 @@ async function editPost(event) {
 
   //assign variables to what is currently in the fields, which are then updated by the user
   const title = document.querySelector('input[name="post-title"]').value.trim();
-  const post_content = document.querySelector('input[name="post-content"]').value.trim();
+  const post_content = document.querySelector('.post-content').value.trim();
   
   // ID is set so that it is whatever post is being edited
   const id = window.location.toString().split('/')[

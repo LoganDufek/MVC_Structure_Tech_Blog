@@ -302,9 +302,30 @@ article a {
   height: 35px;
 }
 
+.edit-post-form  .post-content {
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px
+}
+
 .edit-post h2 {
 
   padding-top: 5px;
+}
+
+#post-title {
+  width: 200px;
+  height: 25px;
+
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+
+#post-content {
+  height: 50px;
+  border-radius: 4px;
+  
 }
 
 /* Mobile sizing */
@@ -387,6 +408,11 @@ section h2 {
 
 .post-main {
   margin-bottom: 15px;
+}
+
+.submit-btn {
+margin-top: 10px;
+  font-size: 35px;
 }
 
 }
