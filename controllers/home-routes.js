@@ -14,14 +14,14 @@ router.get('/', (req, res) => {
    
     ],
     include: [
-      // {
-      //   model: Comment,
-      //   attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-      //   include: {
-      //     model: User,
-      //     attributes: ['username']
-      //   }
-      // },
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
       {
         model: User,
         attributes: ['username']
@@ -50,23 +50,26 @@ router.get('/posts/:id', (req, res) => {
             
         ],
         include: [
-            // {
-            //       model: Comment,
-            //       attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-            //       include: {
-            //             model: User,
-            //             attributes: ['username']
-            //        }
-            //     },
+            {
+                  model: Comment,
+                  attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                  include: {
+                        model: User,
+                        attributes: ['username']
+                   }
+                },
             {
                 model: User,
                 attributes: ['username']
             }
         ]
     }).then(dbPostData => {
+        const post = dbPostData.get({ plain: true });
           
      res.render('single-post', { title: dbPostData.title,
       post_content: dbPostData.post_content,
+      username: dbPostData.username,
+      post,
     loggedIn: req.session.loggedIn });
     })
     .catch(err => {

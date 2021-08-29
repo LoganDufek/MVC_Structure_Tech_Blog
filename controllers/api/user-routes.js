@@ -1,6 +1,6 @@
 const router = require('express').Router();
 // const withAuth = require('../../utils/auth');
-const { User, Post } = require("../../models");
+const { User, Post, Comment } = require("../../models");
 
 
 // get all users
@@ -27,14 +27,14 @@ router.get('/:id', (req, res) => {
     attributes: ['id', 'title', 'post_content', 'created_at']
   },
 
-    // {
-    //   model: Comment,
-    //   attributes: ['id', 'comment_text', 'created_at'],
-    //   include: {
-    //     model: Post,
-    //     attributes: ['title']
-    //   }
-    // },
+    {
+      model: Comment,
+      attributes: ['id', 'comment_text', 'created_at'],
+      include: {
+        model: Post,
+        attributes: ['title']
+      }
+    },
 
 ]
   })
@@ -98,6 +98,8 @@ router.post('/login', (req, res) => {
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
       req.session.loggedIn = true;
+      //Idle timeout is set to one minute 
+      req.session.cookie.maxAge = 60000;
 
       res.json({ user: dbUserData, message: 'You are now logged in!' });
       });

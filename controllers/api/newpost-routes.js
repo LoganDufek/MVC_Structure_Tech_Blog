@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User, Vote, Comment } = require('../../models');
+const { Post, User, Comment } = require('../../models');
 // const withAuth = require('../utils/auth');
 const sequelize = require('../../config/connection');
 
@@ -14,7 +14,6 @@ router.get('/', (req, res) => {
             ['created_at', 'DESC']
         ],
         include: [
-            // include the Comment model here:
                 {
                   model: Comment,
                   attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
@@ -69,7 +68,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/' , (req, res) => { // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
+router.post('/' , (req, res) => {
     Post.create({ title: req.body.title, 
         post_content: req.body.post_content, 
         user_id: req.session.user_id

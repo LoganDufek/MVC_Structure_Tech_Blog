@@ -1,6 +1,11 @@
-{{> post-title}}
+<div class="single-post">
+{{> post-title}} 
+
+<p class ="comment-title">Comments</p>
+{{> comments post.comments}}
 
 {{#if loggedIn}}
+
 <form class="comment-form">
   <div>
     <textarea name="comment-body"></textarea>
@@ -10,10 +15,18 @@
     <button type="submit">Add Comment</button>
   </div>
 </form>
+{{else}}
+<div class="login-please">
+ <a href="/login">You Must Log in to Comment!</a>
+</div>
 {{/if}}
 
-{{> comments post.comments}}
+
+
+
 
 {{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
+<script src="/javascript/add-comment.js"></script>
 {{/if}}
+
+</div>
