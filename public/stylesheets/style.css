@@ -156,7 +156,7 @@ section ol article {
   margin: 15px 20px 10px 10px;
   border: 3px solid rgb(55, 57, 70);
   border-radius: 4px;
-  width: 350px;
+  width: 400px;
   background-color: #36477749;
   
 }
@@ -177,9 +177,9 @@ article a {
 
 .content {
   margin: -3px;
-  padding-top: 7px;
+  padding-top: 12px;
   padding-left: 10px;
-  padding-bottom: 5px;
+  padding-bottom: 12px;
   padding-right: 5px;
   width: 350px;
   font-size: 20px;
