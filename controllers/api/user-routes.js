@@ -98,8 +98,8 @@ router.post('/login', (req, res) => {
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
       req.session.loggedIn = true;
-      //Idle timeout is set to one minute 
-      req.session.cookie.maxAge = 60000;
+      //Idle timeout is set to three minutes 
+      req.session.cookie.maxAge = 180000;
 
       res.json({ user: dbUserData, message: 'You are now logged in!' });
       });

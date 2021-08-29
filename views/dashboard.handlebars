@@ -1,16 +1,15 @@
-
 {{#if posts.length}}
 <section>
   <h2>Your Posts</h2>
   <ol>
     {{#each posts as |post|}}
-    
-      {{> post-info post}}
-      <div class="edit">
+
+    {{> post-info post}}
+    <div class="edit">
       <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-      
-      </div>
-   
+
+    </div>
+
     {{/each}}
   </ol>
 </section>
@@ -18,7 +17,6 @@
 {{/if}}
 
 <section class="newpost">
- 
+
   <h2> <a href="/newpost">Create New Post</a></h2>
 </section>
-

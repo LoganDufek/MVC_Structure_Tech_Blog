@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
-const sequelize = require('../../config/connection');
+
 
 // get all users
 router.get('/',  (req, res) => {
@@ -34,6 +34,7 @@ router.get('/',  (req, res) => {
 
 });
 
+//Get a specific post and the associated username
 router.get('/:id', (req, res) => {
     Post.findOne({
         where: {
@@ -68,6 +69,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
+//Create a new post and associated user_id
 router.post('/' , withAuth, (req, res) => {
     Post.create({ title: req.body.title, 
         post_content: req.body.post_content, 
@@ -78,7 +80,7 @@ router.post('/' , withAuth, (req, res) => {
     });
 });
 
-
+//Update a sepcific post based on ID
 router.put('/:id', withAuth, (req, res) => {
     Post.update({
         title: req.body.title,
@@ -99,6 +101,7 @@ router.put('/:id', withAuth, (req, res) => {
     });
 });
 
+//Delete a sepcific post based on ID
 router.delete('/:id', withAuth, (req, res) => {
     Post.destroy({
         where: {

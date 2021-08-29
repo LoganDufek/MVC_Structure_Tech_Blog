@@ -1,3 +1,4 @@
+{{!-- Base Handlebar HTML --}}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +12,7 @@
     <body>
         <header>
             <nav>
+                {{!-- Setting up elements to appear based on if the user is logged in --}}
                 <a href="/">Home</a>
                 {{#if loggedIn}}
                     <a href="/dashboard">Dashboard</a>
@@ -18,8 +20,6 @@
                 {{ else }}
                     <a href="/login">Login</a>
                 {{/if}}
-
-
             </nav>
 
             <div class="wrapper">
@@ -35,7 +35,7 @@
             <footer>
                 
             </footer>
-
+        {{!-- Logout Javascript only works if the user is Logged In --}}
             {{#if loggedIn}}
                 <script src="/javascript/logout.js"></script>
             {{/if}}

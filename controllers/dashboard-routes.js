@@ -1,9 +1,8 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-
+//Get all posts and the associated user
 router.get('/', withAuth, (req, res) => {
   Post.findAll({
     where: {
@@ -43,7 +42,7 @@ router.get('/', withAuth, (req, res) => {
     });
 });
 
-
+//Get an individual post for editing
 router.get('/edit/:id', withAuth, (req, res) => {
   Post.findByPk(req.params.id, {
     attributes: [
