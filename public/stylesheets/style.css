@@ -24,7 +24,7 @@ nav a {
 nav {
   color: rgb(255, 255, 255);
   padding-top: 10px;
-  margin-left: 77px 
+  margin-left: 67px 
 };
 
 
@@ -73,7 +73,7 @@ textarea:focus, input:focus {
 }
 
 textarea {
-  min-width: 40%;
+  min-width: 300px;
   min-height: 100px;
   display: flex;
 }
@@ -144,7 +144,7 @@ section .new-post {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  margin-right: 40px;
+  
 }
 
 footer {
@@ -209,10 +209,7 @@ article a {
   margin-bottom: 15px;
 }
 
-.comment-form textarea {
- 
-  max-height: 30px;
-}
+
 
 .single-post, .edit-post {
 
@@ -309,4 +306,57 @@ article a {
 .edit-post h2 {
 
   padding-top: 5px;
+}
+
+@media screen and (max-width: 575px) { 
+
+.content {
+  margin: -3px;
+  padding-top: 7px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  width: 300px;
+  font-size: 20px;
+}
+
+
+ol {
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+}
+section ol article {
+margin: 0px;
+}
+
+nav {
+  margin-left: 67px 
+}
+
+.wrapper {
+  margin-left: 50px;
+}
+
+.loginsignup {
+    margin-left: 70px;
+}
+
+.edit{
+  margin-top: 15px;
+  margin-left: 0px;
+}
+
+section ol article {
+  width: auto;
+
+}
+
+section h2 {
+  margin-left: 10px;
+}
+
+.post-list ol {
+  display: block;
+}
+
 }
