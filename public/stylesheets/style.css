@@ -225,6 +225,10 @@ article a {
   margin-bottom: 10px;
 }
 
+.comment-body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .individual-title {
   font-size: 30px;
   padding: 5px 20px;
