@@ -78,9 +78,6 @@ textarea {
   display: flex;
 }
 
-form > div {
-  margin-bottom: 2%;
-}
 
 form label {
   display: block;
@@ -133,7 +130,7 @@ button {
 
 section .new-post {
 
-  padding-left: 30px;
+  padding-left: 60px;
 }
 .new-post label {
 
@@ -238,11 +235,12 @@ article a {
   flex-wrap: nowrap;
   align-items: center;
   color: aliceblue;
+  margin-bottom: 10px;
 }
 
 .individual-content {
   font-size: 20px;
-
+  
 }
 
 .meta {
@@ -303,7 +301,7 @@ article a {
 }
 
 .edit-post-form  .post-content {
-
+ 
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px
 }
@@ -323,6 +321,7 @@ article a {
 
 
 #post-content {
+  margin-bottom: 10px;
   height: 50px;
   border-radius: 4px;
   
@@ -413,6 +412,11 @@ section h2 {
 .submit-btn {
 margin-top: 10px;
   font-size: 35px;
+}
+
+section .new-post {
+
+  padding-left: 30px;
 }
 
 }
