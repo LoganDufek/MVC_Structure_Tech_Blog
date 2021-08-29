@@ -307,6 +307,7 @@ article a {
   padding-top: 5px;
 }
 
+/* Mobile sizing */
 @media screen and (max-width: 575px) { 
 
   header {
@@ -368,8 +369,11 @@ section ol article {
 }
 
 section h2 {
-  margin-left: 18px;
+  display: flex;
+  justify-content: center;
   padding-bottom: 5px;
+  margin-left: 0;
+  font-size: 30px;
 }
 
 .post-list ol {
