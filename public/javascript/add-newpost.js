@@ -3,7 +3,7 @@ async function addPost(event) {
 
   //assign variables to what is currently in the named fields
   const title = document.querySelector('input[name="post-title"]').value;
-  const post_content = document.querySelector('input[name="post-content"]').value;
+  const post_content = document.querySelector('textarea[name="post-content"]').value;
 
   //A fetch post request is then sent to the API posts route with the  data
   const response = await fetch(`/api/posts`, {
